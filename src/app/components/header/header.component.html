@@ -1,22 +1,23 @@
 <nav class="navbar navbar-expand-lg">
   <div class="navbar-brand title">
-    <i class="fas fa-cloud"></i>
+    <!-- <i class="fas fa-cloud"></i> -->
+    <img src="../../../assets/finitylogo.png" class="logo" width="50" height="50">
     NameThis
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"><i class="fas fa-bars ham-icon"></i></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item header-options">
-          <a class="nav-link" routerLink="/login">Home</a>
+          <h4><a class="nav-link" routerLink="/login">Home</a></h4>
         </li>
         <div *ngIf="registerPage()">
           <li class="nav-item header-options">
-            <a class="nav-link" routerLink="/login">About Us</a>
+            <h4><a class="nav-link" routerLink="/login">About Us</a></h4>
           </li>
         </div>
     </ul>
   </div>
-    <button class="btn btn-lg" type="button" (click)="navigate()">{{buttonDisplayText}}</button>
+    <button class="btn btn-lg navbar-button" type="button" (click)="navigate()">{{buttonDisplayText}}</button>
 </nav>
