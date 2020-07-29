@@ -1,0 +1,21 @@
+.spinner {
+  background-color: #16161a;
+  height: 800px;
+}
+
+.consent-text {
+  color: white;
+  text-align: center;
+  margin-top: 200px;
+}
+
+.request-consent-page {
+  background-color: #16161a;
+}
+
+.back-button {
+  border-radius: 20px;
+  background-color: #004aad;
+  color: white;
+  font-size: xx-large;
+}

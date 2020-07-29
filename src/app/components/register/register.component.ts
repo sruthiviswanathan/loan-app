@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoanProcessingDetails } from 'src/app/models/LoanProcessingDetail';
 import { RegisterService } from 'src/app/services/register-service/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   loanDuration: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private registerService: RegisterService) { }
+    private registerService: RegisterService,
+    private router: Router) { }
 
   ngOnInit() {
     this.createCustomerDetailsForm();
@@ -74,7 +76,8 @@ export class RegisterComponent implements OnInit {
       }
       const loanProcessingDetails: LoanProcessingDetails = new LoanProcessingDetails(formData);
       console.log('Loan Processing Request data: ', loanProcessingDetails);
-      return await this.registerService.requestForConsent(loanProcessingDetails);
+      await this.registerService.requestForConsent(loanProcessingDetails);
+      this.router.navigateByUrl('consent');
     } else {
       console.log('Invalid form details');
     }

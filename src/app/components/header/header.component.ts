@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit {
     return this.buttonDisplayText;
   }
 
-  registerPage() {
-    return (this.pageUrl !== 'register') ? true : false;
+  showAboutUs() {
+    return (this.pageUrl == 'login') ? true : false;
   }
 
   navigate() {
