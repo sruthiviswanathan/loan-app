@@ -1,3 +1,20 @@
 button {
   border-radius: 20px;
+  background-color: #28a745;
+  color: white;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: xx-large;
+  margin-left: 20px;
+}
+
+.header-options {
+  font-weight: bolder;
+  color: white !important;
+}
+
+button:hover {
+  color: white;
 }

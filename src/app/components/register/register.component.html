@@ -7,20 +7,20 @@
 
     <div class="row">
       <h5 class="register-form-title">Please enter the details in this form ...</h5>
-      <div class="col-lg-12 d-flex justify-content-center">
-
+      <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+        <div class="row d-flex justify-content-center">
         <!--Customer Details form-->
-          <div class="col-lg-4" class="customer-details-form-container">
+          <div class="col-lg-4 col-md-7 col-sm-4" class="customer-details-form-container">
             <h5 class="d-flex justify-content-center form-title">Customer Details</h5>
-            <form [formGroup]="customerDetailsForm" class="col-lg-12 customer-details-form">
+            <form [formGroup]="customerDetailsForm" class="col-lg-12 col-md-12 col-sm-12 customer-details-form">
               <div class="customer-details-form-input">
                 <div class="row">
-                  <div class="form-group form-input col-lg-6">
+                  <div class="form-group form-input col-lg-6 col-md-6 col-sm-6">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" placeholder="John"
                     formControlName="firstName" [ngClass]="{ 'is-invalid': customerDetailsForm.controls['firstName'].touched && customerDetailsForm.controls['firstName'].invalid }" required>
                   </div>
-                  <div class="form-group form-input col-lg-6">
+                  <div class="form-group form-input col-lg-6 col-md-6 col-sm-6">
                     <label for="lastName">Last Name</label>
                     <input type="text" class="form-control" placeholder="Doe"
                     formControlName="lastName" [ngClass]="{ 'is-invalid': customerDetailsForm.controls['lastName'].touched && customerDetailsForm.controls['lastName'].invalid }" required>
@@ -28,12 +28,12 @@
                 </div>
 
                 <div class="row">
-                  <div class="form-group form-input col-lg-6">
+                  <div class="form-group form-input col-lg-6 col-md-6 col-sm-6">
                     <label for="businessName">Business Name</label>
                     <input type="text" class="form-control" placeholder=""
                     formControlName="businessName" [ngClass]="{ 'is-invalid': customerDetailsForm.controls['businessName'].touched && customerDetailsForm.controls['businessName'].invalid }" required>
                   </div>
-                  <div class="form-group form-input col-lg-6">
+                  <div class="form-group form-input col-lg-6 col-md-6 col-sm-6">
                     <label for="businessPanNumber">Business Pan Number</label>
                     <input type="text" class="form-control" placeholder=""
                     formControlName="businessPanNumber" [ngClass]="{ 'is-invalid': customerDetailsForm.controls['businessPanNumber'].touched && customerDetailsForm.controls['businessPanNumber'].invalid }" required>
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="form-group form-input col-lg-12">
+                  <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
                     <label for="adhaarNumber">Adhaar Number</label>
                     <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx"
                     formControlName="adhaarNumber" [ngClass]="{ 'is-invalid': customerDetailsForm.controls['adhaarNumber'].touched && customerDetailsForm.controls['adhaarNumber'].invalid }" required>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="form-group form-input col-lg-12">
+                  <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
                     <label for="accountAggregatorId">Account AggregatorID</label>
                     <input type="text" class="form-control" placeholder="example@aa"
                     formControlName="accountAggregatorId" [ngClass]="{ 'is-invalid': customerDetailsForm.controls['accountAggregatorId'].touched && customerDetailsForm.controls['accountAggregatorId'].invalid }" required>
@@ -60,12 +60,12 @@
           </div>
 
         <!--loan helper details form-->
-          <div class="col-lg-4 loan-helper-details-form-container">
+          <div class="col-lg-3 col-md-4 col-sm-4 loan-helper-details-form-container">
             <h5 class="d-flex justify-content-center form-title">Loan Helper Details</h5>
-            <form [formGroup]="loanHelperDetailsForm" class="col-lg-12 loan-helper-details-form">
+            <form [formGroup]="loanHelperDetailsForm" class="col-lg-12 col-md-12 col-sm-12 loan-helper-details-form">
               <div class="loan-helper-details-form-input">
                 <div class="row">
-                  <div class="form-group form-input col-lg-12">
+                  <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
                     <label for="fullName">Your Name</label>
                     <input type="text" class="form-control" placeholder="Full Name"
                     formControlName="fullName" [ngClass]="{ 'is-invalid': loanHelperDetailsForm.controls['fullName'].touched && loanHelperDetailsForm.controls['fullName'].invalid }" required>
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="form-group form-input col-lg-12">
+                  <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
                     <label for="mobileNumber">Mobile Number</label>
                     <input type="text" class="form-control" placeholder="Mobile Number"
                     formControlName="mobileNumber" [ngClass]="{ 'is-invalid': loanHelperDetailsForm.controls['mobileNumber'].touched && loanHelperDetailsForm.controls['mobileNumber'].invalid }" required>
@@ -84,20 +84,20 @@
           </div>
 
         <!-- Loan Details -->
-          <div class="col-lg-4 loan-details-form-container">
+          <div class="col-lg-3 col-md-8 col-sm-12 loan-details-form-container">
               <h5 class="d-flex justify-content-center form-title">Loan Details</h5>
-              <form [formGroup]="loanDetailsForm" class="col-lg-12 loan-details-form">
+              <form [formGroup]="loanDetailsForm" class="col-lg-12 col-md-12 col-sm-12 loan-details-form">
                 <div class="loan-details-form-input">
                   <div class="row">
-                    <div class="form-group form-input col-lg-12">
+                    <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
                       <label for="loanAmount">Loan Amount</label>
-                      <input type="number" class="form-control" placeholder=""
+                      <input type="number" class="form-control" placeholder="₹₹₹₹₹"
                       formControlName="loanAmount" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['loanAmount'].touched && loanDetailsForm.controls['loanAmount'].invalid }" required>
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="form-group form-input col-lg-12">
+                    <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
                       <label for="reasonForLoan">Reason for loan</label>
                       <input type="text" class="form-control" placeholder=""
                       formControlName="reasonForLoan" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['reasonForLoan'].touched && loanDetailsForm.controls['reasonForLoan'].invalid }" required>
@@ -105,20 +105,20 @@
                   </div>
 
                   <div class="row">
-                    <div class="form-group form-input col-lg-12">
+                    <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
                       <label for="loanDuration">Loan Duration :-</label>
                       <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                           <label for="Years">Years</label>
                           <input type="number" class="form-control" placeholder="00" step='1'
                           formControlName="years" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['years'].touched && loanDetailsForm.controls['years'].invalid }" required>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                           <label for="months">Months</label>
                           <input type="number" class="form-control" placeholder="00" step='1'
                           formControlName="months" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['months'].touched && loanDetailsForm.controls['months'].invalid }" required>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                           <label for="Years">Days</label>
                           <input type="number" class="form-control" placeholder="00" step='1'
                           formControlName="days" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['days'].touched && loanDetailsForm.controls['days'].invalid }" required>
@@ -128,6 +128,7 @@
                   </div>
                 </div>
               </form>
+        </div>
         </div>
       </div>
     </div>
@@ -142,4 +143,9 @@
     </div>
 
   </div>
+
+  <div class="register-container-footer">
+    <app-footer></app-footer>
+  </div>
+
 </div>
