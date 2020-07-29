@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoanProcessingDetails } from 'src/app/models/LoanProcessingDetail';
+import { RegisterService } from 'src/app/services/register-service/register.service';
 
 @Component({
   selector: 'app-register',
@@ -11,8 +13,10 @@ export class RegisterComponent implements OnInit {
   customerDetailsForm: FormGroup;
   loanHelperDetailsForm: FormGroup;
   loanDetailsForm: FormGroup;
+  loanDuration: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private registerService: RegisterService) { }
 
   ngOnInit() {
     this.createCustomerDetailsForm();
@@ -43,19 +47,34 @@ export class RegisterComponent implements OnInit {
     this.loanDetailsForm = this.formBuilder.group({
       loanAmount : ['', Validators.required],
       reasonForLoan: ['', Validators.required],
+      loanDuration : this.createLoanDurationForm()
+    });
+  }
+
+  createLoanDurationForm() {
+    this.loanDuration = this.formBuilder.group({
       years: ['', Validators.required],
       months: ['', Validators.required],
       days: ['', Validators.required]
     });
+    return this.loanDuration;
   }
 
 
-  register() {
+  async requestForConsent() {
     if (this.customerDetailsForm.valid && this.loanHelperDetailsForm.valid && this.loanDetailsForm.valid) {
       console.log('Valid form details');
       console.log('Customer Details form Value: ', this.customerDetailsForm.value);
       console.log('Loan Helper Details form Value: ', this.loanHelperDetailsForm.value);
       console.log('Loan Details form Value: ', this.loanDetailsForm.value);
+      const formData: any= {
+        customerDetails : this.customerDetailsForm.value,
+        loanHelperDetails: this.loanHelperDetailsForm.value,
+        loanDetails: this.loanDetailsForm.value
+      }
+      const loanProcessingDetails: LoanProcessingDetails = new LoanProcessingDetails(formData);
+      console.log('Loan Processing Request data: ', loanProcessingDetails);
+      return await this.registerService.requestForConsent(loanProcessingDetails);
     } else {
       console.log('Invalid form details');
     }

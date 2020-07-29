@@ -108,23 +108,23 @@
                   </div>
 
                   <div class="row">
-                    <div class="form-group form-input col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group form-input col-lg-12 col-md-12 col-sm-12" formGroupName="loanDuration">
                       <label for="loanDuration">Loan Duration :-</label>
                       <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4">
                           <label for="Years">Years</label>
                           <input type="number" class="form-control" placeholder="00" step='1'
-                          formControlName="years" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['years'].touched && loanDetailsForm.controls['years'].invalid }" required>
+                          formControlName="years" [ngClass]="{ 'is-invalid': loanDuration.controls['years'].touched && loanDuration.controls['years'].invalid }" required>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4">
                           <label for="months">Months</label>
                           <input type="number" class="form-control" placeholder="00" step='1'
-                          formControlName="months" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['months'].touched && loanDetailsForm.controls['months'].invalid }" required>
+                          formControlName="months" [ngClass]="{ 'is-invalid': loanDuration.controls['months'].touched && loanDuration.controls['months'].invalid }" required>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4">
                           <label for="Years">Days</label>
                           <input type="number" class="form-control" placeholder="00" step='1'
-                          formControlName="days" [ngClass]="{ 'is-invalid': loanDetailsForm.controls['days'].touched && loanDetailsForm.controls['days'].invalid }" required>
+                          formControlName="days" [ngClass]="{ 'is-invalid': loanDuration.controls['days'].touched && loanDuration.controls['days'].invalid }" required>
                         </div>
                       </div>
                     </div>
@@ -138,7 +138,7 @@
 
     <div class="row">
       <div class="col-lg-12 submit-button text-right">
-        <button type="button" (click)="register()" class="btn btn-lg">
+        <button type="button" (click)="requestForConsent()" class="btn btn-lg">
           Request for consent
           <i class="fas fa-arrow-right"></i>
         </button>

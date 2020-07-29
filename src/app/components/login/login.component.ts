@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LoginCredentials } from 'src/app/models/LoginCredentials';
+import { LoginService } from 'src/app/services/login-service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private loginService: LoginService) { }
 
   ngOnInit() {
     this.createFormGroup();
@@ -23,10 +26,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login() {
+  async login() {
     if (this.loginForm.valid) {
       console.log('Valid form details');
-      console.log('Login Form Value: ', this.loginForm.value);
+      const loginDetails: LoginCredentials = new LoginCredentials(this.loginForm.value);
+      console.log('Login Request value: ', loginDetails);
+      return await this.loginService.login(loginDetails);
     } else {
       console.log('Invalid form data');
     }
