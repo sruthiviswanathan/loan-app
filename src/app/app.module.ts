@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpinnerComponent } from './shared/component/spinner/spinner.component';
 import { RequestConsentComponent } from './components/request-consent/request-consent.component';
+import { LoanProcessorDashboardComponent } from './components/loan-processor-dashboard/loan-processor-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RequestConsentComponent } from './components/request-consent/request-co
     HeaderComponent,
     FooterComponent,
     SpinnerComponent,
-    RequestConsentComponent
+    RequestConsentComponent,
+    LoanProcessorDashboardComponent
   ],
   imports: [
     BrowserModule,
