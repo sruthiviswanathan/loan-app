@@ -1,0 +1,51 @@
+.login-page {
+  background-color: #16161a;
+  color: white;
+}
+
+.login-form {
+  margin: 200px 0px 0px 200px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.form-control {
+  border-radius: 20px;
+}
+
+.form-title {
+  margin: 20px 0px 30px 0px;
+}
+
+.form-input {
+  font-size: 18px;
+  margin: 20px 0px 5px 0px;
+}
+
+button {
+  margin: 20px 0px 20px 0px;
+  border-radius: 20px;
+  background-color: #004aad;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
+.is-invalid {
+  border-color:red !important;
+  box-shadow: none !important;
+}
+
+.image {
+  margin-top: 0px;
+  margin-left: 200px;
+}
+
+.page-title {
+  margin: 75px 10px 10px 200px;
+}
+
+.page-description {
+  margin: 0px 10px 10px 200px;
+  color: #94a1b2;
+}

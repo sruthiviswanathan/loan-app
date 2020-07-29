@@ -1,0 +1,20 @@
+<div class="request-consent-page">
+  <div>
+    <app-header></app-header>
+  </div>
+  <div class="spinner">
+    <app-spinner></app-spinner>
+    <div style="display:none;" id="myDiv" class="animate-bottom consent-text">
+      <h1>The consent has been sent to the customer's phone</h1>
+      <h3>Please ask the customer to go through their sms to check for consent request</h3>
+      <br><br>
+      <button type="button" (click)="navigate()" class="btn btn-lg back-button">
+        <i class="fas fa-arrow-left"></i>
+        Go Back for more
+      </button>
+    </div>
+  </div>
+  <div>
+    <app-footer></app-footer>
+  </div>
+</div>
