@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   buttonText() {
-    if (this.pageUrl === 'register') {
+    if (this.pageUrl !== 'login') {
       this.buttonDisplayText = 'Logout';
       this.navigationLink = '/login';
     } else {
@@ -34,9 +34,9 @@ export class HeaderComponent implements OnInit {
   }
 
   navigate() {
-    if (this.pageUrl === 'login') {
+    if (this.buttonDisplayText === 'Register') {
       this.router.navigateByUrl('/register');
-    } else if (this.pageUrl === 'register') {
+    } else if (this.buttonDisplayText === 'Logout') {
       this.router.navigateByUrl('/login');
     }
   }
