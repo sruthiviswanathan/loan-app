@@ -1,0 +1,88 @@
+<div class="loan-processing-cust-details">
+  <div>
+    <app-header></app-header>
+  </div>
+  <div class="info-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-3 col-sm-12 customer-details">
+          <div class="justify-content-center">
+          <h2 class="justify-content-center card-title">Customer Details</h2>
+          <div class="customer-detail-entry">
+            Name : {{customerDetails.name}}
+          </div>
+          <div class="customer-detail-entry">
+            AA Id : {{customerDetails.aaId}}
+          </div>
+          <div class="customer-detail-entry">
+            Consent Received : <span class="text-success" [ngClass]="{ 'text-danger': customerDetails.consentReceived.toUpperCase() == 'NO'}"> {{customerDetails.consentReceived | titlecase}} </span>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-9 col-sm-12 customer-table-details">
+          <h2 class="justify-content-center table-title">Assets based</h2>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th *ngFor="let header of assetBasedTableHeader">
+                  {{ header | titlecase}}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of customerDetails.assetBased; let i=index;">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{data.asset.assetName}}</td>
+                <td>{{data.asset.amount}}</td>
+                <td class="text-success" [ngClass]="{ 'text-danger': data.asset.availability.toUpperCase() == 'NO'}">{{data.asset.availability}}</td>
+                <td>{{data.asset.source}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-3 col-sm-12 empty-container">
+
+        </div>
+        <div class="col-lg-7 col-md-9 col-sm-12 customer-table-details">
+          <h2 class="justify-content-center table-title">Flow based</h2>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th *ngFor="let header of flowBasedTableHeader">
+                  {{ header | titlecase}}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of customerDetails.flowBased; let i=index;">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{data.flows.flowName}}</td>
+                <td>{{data.flows.amount}}</td>
+                <td class="text-success" [ngClass]="{ 'text-danger': data.flows.availability.toUpperCase() == 'NO'}">{{data.flows.availability}}</td>
+                <td>{{data.flows.source}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div>
+          <button class="btn btn-danger btn-lg button" (click)="navigate()">
+            Request for missing data
+          </button>
+        </div>
+        <div>
+          <button class="btn btn-success btn-lg button" (click)="navigate()">
+            Process Loan
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-footer></app-footer>
+  </div>
+</div>

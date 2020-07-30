@@ -1,0 +1,45 @@
+.info-container {
+  background-color: #16161a;
+  color: white;
+}
+
+.customer-details, .customer-table-details {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  margin: 80px 10px 10px 10px;
+}
+
+.empty-container {
+  background-color: none;
+  margin: 80px 10px 10px 10px;
+}
+
+.customer-table-details {
+  margin-left: 40px;
+}
+
+.customer-detail-entry {
+  margin: 10px 10px 10px 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-title {
+  margin: 20px 0px 40px 0px;
+}
+
+.table-title {
+  text-align: center;
+  margin-top: 20px
+}
+
+.table {
+  font-size: 20px;
+}
+
+.button {
+  margin: 30px 0px 0px 100px;
+  border-radius: 20px;
+}
+

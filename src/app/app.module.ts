@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SpinnerComponent } from './shared/component/spinner/spinner.component';
 import { RequestConsentComponent } from './components/request-consent/request-consent.component';
 import { LoanProcessorDashboardComponent } from './components/loan-processor-dashboard/loan-processor-dashboard.component';
+import { LoanProcessingCustomerDetailsComponent } from './components/loan-processing-customer-details/loan-processing-customer-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoanProcessorDashboardComponent } from './components/loan-processor-das
     FooterComponent,
     SpinnerComponent,
     RequestConsentComponent,
-    LoanProcessorDashboardComponent
+    LoanProcessorDashboardComponent,
+    LoanProcessingCustomerDetailsComponent
   ],
   imports: [
     BrowserModule,

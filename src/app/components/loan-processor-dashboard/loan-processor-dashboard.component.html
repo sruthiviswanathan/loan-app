@@ -11,25 +11,21 @@
       <table class="table table-striped table-dark">
         <thead>
           <tr>
-            <th scope="col">Index</th>
-            <th scope="col">Name</th>
-            <th scope="col">Account Aggregator ID</th>
-            <th scope="col">Consent Received</th>
-            <th scope="col">&nbsp;</th>
+            <th *ngFor="let header of tableHeader">{{header}}</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of customers; let i=index;">
+          <tr *ngFor="let data of customerDetails; let i=index;">
             <th scope="row">{{i + 1}}</th>
             <td>{{data.name}}</td>
             <td>{{data.accountAggregatorId}}</td>
-            <td><p class="text-success" [ngClass]="{ 'text-danger': data.consentReceived.toUpperCase() == 'NO'}">{{data.consentReceived}}</p></td>
+            <td><p class="text-success" [ngClass]="{ 'text-danger': data.consentReceived.toUpperCase() == 'NO'}">{{data.consentReceived | titlecase}}</p></td>
             <td>
-              <button type="button" class="btn btn-success px-3" onclick="window.location.href='LPCustomerDetails.html'" [ngClass]="{ 'disabled': data.consentReceived.toUpperCase() == 'NO'}">
-                Proceess
+              <button type="button" class="btn btn-success px-3" (click)="navigate('customer-details')" [ngClass]="{ 'disabled': data.consentReceived.toUpperCase() == 'NO'}">
+                Process
               </button>
               &nbsp;&nbsp;
-              <button type="button" class="btn btn-danger px-3" onclick="window.location.href='LoanConfiguration.html'" [ngClass]="{ 'disabled': data.consentReceived.toUpperCase() == 'NO'}">
+              <button type="button" class="btn btn-danger px-3" (click)="navigate('p1')" [ngClass]="{ 'disabled': data.consentReceived.toUpperCase() == 'NO'}">
                 Configure
               </button>
             </td>
